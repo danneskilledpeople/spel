@@ -14,9 +14,13 @@ public final class App {
      * @param args The arguments of the program.
      */
     public static void main(String[] args) {
-        System.out.println("!");
 
         JFrame frame = new JFrame("Spel");
+        BlockBreakerPanel panel = new BlockBreakerPanel();
+
+        frame.getContentPane().add(panel);
+
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         frame.setSize(800, 600);
 

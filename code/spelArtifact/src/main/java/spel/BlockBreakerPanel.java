@@ -3,13 +3,34 @@ package spel;
 import javax.swing.JPanel;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.ArrayList;
+import java.awt.Color;
+import java.awt.Graphics;
 
 
 public class BlockBreakerPanel extends JPanel implements KeyListener {
+
+    Color blue = new Color(0, 0, 255);
+    Color green = new Color(0, 255, 0);
+    Color red = new Color(255, 0, 0);
+
+    Block paddle = new Block(175, 480, 150, 20, green);
+    Block ball = new Block(273, 435, 25, 25, blue);
+
+    ArrayList<Block> blocks = new ArrayList<Block>();
+
+
+
     BlockBreakerPanel (){
         addKeyListener(this);
         setFocusable(true);
     }
+    
+    public void paintComponent(Graphics g){
+        paddle.draw(g, this);
+    }
+
+    
     public void update(){
 
     }
