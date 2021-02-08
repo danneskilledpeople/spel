@@ -5,7 +5,8 @@ import java.awt.Graphics;
 import java.awt.Component;
 
 public class Block extends Rectangle {
-
+int moveX;
+int moveY;
 Color color;
 boolean destroyed;
 
@@ -15,11 +16,14 @@ boolean destroyed;
         this.width = w;
         this.height = h;
         this.color = c;
+        this.moveX = 3;
+        this.moveY = 3;
     }
 
     public void draw (Graphics g, Component c){
         if (!destroyed){
             g.setColor(color);
+            g.fillRect(x, y, width, height);
         }
     }
 }
